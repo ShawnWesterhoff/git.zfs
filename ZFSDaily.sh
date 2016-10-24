@@ -1,6 +1,6 @@
 #!/usr/local/bin/bash
 # ZFS Snapshot BASH script by Shawn Westerhoff
-# Updated 1/14/2014
+# Updated 1/14/2014 and again to demo git
 
 ### DATE VARIABLES
 # D = Today's date
@@ -32,7 +32,9 @@ done
 
 for i in $( zfs list -H -o name ); do
         if [ $i == tier1 ]
-        then echo "$i found, skipping"
+        then
+        	echo "$i found, skipping"
+        	echo "$i found, skipping ahead"
         else
         zfs destroy $i@$D20
         fi
